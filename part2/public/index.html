@@ -85,7 +85,7 @@
             alert('An error occurred. Please try again later.');
           }
         },
-        async loadDogs() {
+      async loadDogs() {
           try {
             const res = await fetch('/api/dogs');
             if (!res.ok) throw new Error('Failed to fetch dogs');
