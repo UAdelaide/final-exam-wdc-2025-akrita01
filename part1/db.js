@@ -17,7 +17,7 @@ let db;
       /* eslint-disable-next-line no-console */
       console.error('Database connection error:', err);
     }
-  })();
+})();
 
 app.get('/api/dogs', async (req, res) => {
   try {
