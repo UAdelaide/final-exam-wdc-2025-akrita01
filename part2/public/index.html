@@ -84,7 +84,7 @@
             console.error('Login error:', error);
             alert('An error occurred. Please try again later.');
           }
-        }
+        },
         async loadDogs() {
           try {
             const res = await fetch('/api/dogs');
@@ -106,7 +106,7 @@
       },
       mounted() {
         this.loadDogs(); // Load dogs when the app is mounted
-      }
+      },
       }
     }).mount('#app');
   </script>
