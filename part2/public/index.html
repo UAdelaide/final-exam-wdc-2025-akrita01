@@ -35,10 +35,10 @@
    <tr>
     <th>Photo</th>
     <th>Name</th>
-          <th>Size</th>
-          <th>Owner</th>
-        </tr>
-      </thead>
+    <th>Size</th>
+    <th>Owner</th>
+   </tr>
+  </thead>
       <tbody>
         <tr v-for="dog in dogs" :key="dog.dog_id">
           <td><img :src="dog.photo" alt="Dog photo" class="img-thumbnail" style="width: 100px; height: 100px;"></td>
