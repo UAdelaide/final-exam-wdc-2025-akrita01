@@ -39,7 +39,7 @@
           password: ''
         };
       },
-      methods: {
+    methods: {
       async handleLogin() {
           try {
             const response = await fetch('/login', {
@@ -64,7 +64,7 @@
             alert('An error occurred. Please try again later.');
           }
         }
-      } 
+      }
     }).mount('#app');
   </script>
 
