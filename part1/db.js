@@ -17,7 +17,7 @@ let db;
 (async () => {
   try {
     // Connect to MySQL without specifying a database
-    const connection = await mysql.createConnection({
+    db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: '' // Set your MySQL root password
@@ -26,6 +26,7 @@ let db;
     console.error('Failed to connect to MySQL:', err);
     process.exit(1); // Exit the process if the connection fails
   }
+})();
 
 app.get('/api/dogs', async (req, res) => {
   try {
@@ -74,6 +75,5 @@ app.get('/api/walkers/summary', async (req, res) => {
     res.status(500).json({ error: 'Failed to get walkers summary' });
   }
 });
-
-module.exports = router;
+module.exports = app;ule.exports = router;
   }
