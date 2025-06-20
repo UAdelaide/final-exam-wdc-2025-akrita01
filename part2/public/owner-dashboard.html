@@ -131,6 +131,7 @@
         };
       }
     }).mount('#app');
+
     // Logout function
     function logout() {
       fetch('/api/users/logout', { method: 'POST' })
@@ -141,6 +142,7 @@
           console.error('Logout failed:', error);
         });
     }
+
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
