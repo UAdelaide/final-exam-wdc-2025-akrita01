@@ -14,18 +14,13 @@ app.use(cookieParser());
 let db;
 
 (async () => {
-    try {
-      db = await mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'DogWalkService'
-      });
-    } catch (err) {
-      /* eslint-disable-next-line no-console */
-      console.error('Database connection error:', err);
-    }
-})();
+  try {
+    // Connect to MySQL without specifying a database
+    const connection = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '' // Set your MySQL root password
+    });
 
 app.get('/api/dogs', async (req, res) => {
   try {
