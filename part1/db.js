@@ -75,5 +75,4 @@ app.get('/api/walkers/summary', async (req, res) => {
     res.status(500).json({ error: 'Failed to get walkers summary' });
   }
 });
-module.exports = app;ule.exports = router;
-  }
+module.exports = app;
