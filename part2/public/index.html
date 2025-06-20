@@ -27,6 +27,27 @@
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
+
+<!-- Table of Dogs -->
+<h2 class="mt-4">Available Dogs</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="dog in dogs" :key="dog.dog_id">
+          <td><img :src="dog.photo" alt="Dog photo" class="img-thumbnail" style="width: 100px; height: 100px;"></td>
+          <td>{{ dog.name }}</td>
+          <td>{{ dog.size }}</td>
+          <td>{{ dog.owner_name }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <script>
