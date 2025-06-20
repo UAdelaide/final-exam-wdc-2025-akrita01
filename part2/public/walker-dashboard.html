@@ -11,6 +11,9 @@
   <div id="app" class="container py-4">
     <h1 class="mb-4 text-success">Walker Dashboard</h1>
 
+    <!-- Logout Button -->
+    <button type="button" class="btn btn-danger mb-4" onclick="logout()">Logout</button>
+
     <!-- Alert messages -->
     <div v-if="message" class="alert alert-info">{{ message }}</div>
     <div v-if="error" class="alert alert-danger">{{ error }}</div>
