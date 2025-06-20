@@ -16,6 +16,14 @@ router.get('/', async (req, res) => {
 router.post('/register', async (req, res) => {
   const { username, email, password, role } = req.body;
 
+  if (!username || !email || !password || !role) {
+    return res.status(400).json({ error: 'All fields are required' });
+  }
+
+  if (!['owner', 'walker'].includes(role)) {
+    return res.status(400).json({ error: 'Invalid role. Must be "owner" or "walker"' });
+  }
+
   try {
     const [result] = await db.query(`
       INSERT INTO Users (username, email, password_hash, role)
