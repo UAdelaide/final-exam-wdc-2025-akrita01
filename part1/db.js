@@ -23,7 +23,6 @@ let db;
       password: '' // Set your MySQL root password
     });
   } catch (err) {
-    console.error('Failed to connect to MySQL:', err);
     process.exit(1); // Exit the process if the connection fails
   }
 })();
