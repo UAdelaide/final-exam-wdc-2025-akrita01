@@ -52,12 +52,11 @@
         try {
           const res = await fetch('/api/users/me');
           if (!res.ok) throw new Error('Failed to fetch current user');
-          currentUser.value = await res.json();
+          currentUser.value = await res.json(); // Save the user data
         } catch (err) {
           error.value = err.message;
         }
-        }
-
+      }
 
         async function loadWalkRequests() {
           try {
