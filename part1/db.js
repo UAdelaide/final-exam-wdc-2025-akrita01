@@ -26,7 +26,6 @@ let db;
     console.error('Failed to connect to MySQL:', err);
     process.exit(1); // Exit the process if the connection fails
   }
-})();
 
 app.get('/api/dogs', async (req, res) => {
   try {
@@ -75,5 +74,6 @@ app.get('/api/walkers/summary', async (req, res) => {
     res.status(500).json({ error: 'Failed to get walkers summary' });
   }
 });
-module.exports = app;ule.exports = router;
+
+module.exports = router;
   }
