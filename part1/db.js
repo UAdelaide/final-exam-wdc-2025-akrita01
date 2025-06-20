@@ -6,15 +6,18 @@ const app = express();
 let db;
 
 (async () => {
-  try {
-    db = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'DogWalkService'
-    });
-  }
-})();
+    try {
+      db = await mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'DogWalkService'
+      });
+    } catch (err) {
+      /* eslint-disable-next-line no-console */
+      console.error('Database connection error:', err);
+    }
+  })();
 
 app.get('/api/dogs', async (req, res) => {
   try {
