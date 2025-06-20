@@ -39,13 +39,13 @@
     <th>Owner</th>
    </tr>
   </thead>
-<tbody>
-        <tr v-for="dog in dogs" :key="dog.dog_id">
-          <td><img :src="dog.photo" alt="Dog photo" class="img-thumbnail" style="width: 100px; height: 100px;"></td>
-          <td>{{ dog.name }}</td>
-          <td>{{ dog.size }}</td>
-          <td>{{ dog.owner_name }}</td>
-        </tr>
+  <tbody>
+    <tr v-for="dog in dogs" :key="dog.dog_id">
+      <td><img :src="dog.photo" alt="Dog photo" class="img-thumbnail" style="width: 100px; height: 100px;"></td>
+      <td>{{ dog.name }}</td>
+      <td>{{ dog.size }}</td>
+      <td>{{ dog.owner_name }}</td>
+      </tr>
       </tbody>
     </table>
   </div>
