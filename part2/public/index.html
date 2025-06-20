@@ -85,6 +85,28 @@
             alert('An error occurred. Please try again later.');
           }
         }
+        async loadDogs() {
+          try {
+            const res = await fetch('/api/dogs');
+            if (!res.ok) throw new Error('Failed to fetch dogs');
+            const dogData = await res.json();
+
+            // Fetch random photos for each dog
+            const dogPromises = dogData.map(async (dog) => {
+              const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
+              const photoData = await photoRes.json();
+              return { ...dog, photo: photoData.message };
+            });
+
+            this.dogs = await Promise.all(dogPromises);
+          } catch (err) {
+            console.error('Error loading dogs:', err);
+          }
+        }
+      },
+      mounted() {
+        this.loadDogs(); // Load dogs when the app is mounted
+      }
       }
     }).mount('#app');
   </script>
