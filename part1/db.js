@@ -13,8 +13,6 @@ let db;
       password: '',
       database: 'DogWalkService'
     });
-  } catch (err) {
-    console.error('DB connection error:', err);
   }
 })();
 
