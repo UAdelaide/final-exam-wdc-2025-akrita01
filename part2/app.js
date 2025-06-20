@@ -14,7 +14,7 @@ app.use(
     session({
       secret: 'mySuperSecureRandomKey123!@#456789',
       resave: false,
-      saveUninitialized: true,
+      saveUninitialized: true
     })
   );
 
