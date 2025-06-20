@@ -39,7 +39,32 @@
           password: ''
         };
       },
-      
+      methods: {
+      async handleLogin() {
+          try {
+            const response = await fetch('/login', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ username: this.username, password: this.password })
+            });
+            const result = await response.json();
+            if (result.success) {
+              if (result.role === 'owner') {
+                window.location.href = 'owner-dashboard.html';
+              } else if (result.role === 'walker') {
+                window.location.href = 'walker-dashboard.html';
+              }
+            } else {
+              alert('Invalid credentials. Please try again.');
+            }
+          } catch (error) {
+            console.error('Login error:', error);
+            alert('An error occurred. Please try again later.');
+          }
+        }
+      } 
     }).mount('#app');
   </script>
 
